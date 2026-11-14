@@ -1,0 +1,8 @@
+,value
+glacier pixels compared,71869.0
+speed correlation (Pearson r),0.6
+median NISAR / ITS_LIVE speed ratio,0.69
+fast-ice pixels (ITS_LIVE ≥ 40 m/yr),49560.0
+median flow-direction difference (deg),9.2
+% fast-ice pixels within 30° of ITS_LIVE,88.9
+ITS_LIVE→UTM axis rotation applied (deg),13.15

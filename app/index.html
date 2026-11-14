@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pakistan Glacier Intelligence Explorer</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="intro">
+<div id="map" aria-label="Map of Siachen Glacier"></div>
+
+<!-- top bar -->
+<header class="glass topbar">
+  <div class="brand">
+    <h1>Pakistan Glacier Intelligence Explorer</h1>
+    <p>How fast is Siachen Glacier moving — and is it changing?</p>
+  </div>
+  <div class="top-actions">
+    <span class="badge">NASA Space Apps 2026 · Dancing with the SARs</span>
+    <button id="about-open" class="btn">About the data</button>
+    <button id="analysis-open" class="btn primary" aria-expanded="false">Analysis ▸</button>
+  </div>
+</header>
+
+<!-- left: layers + legend -->
+<aside class="glass panel-left" id="panel-left" aria-label="Map layers">
+  <div class="panel-head">
+    <span>Map layers</span>
+    <button id="left-toggle" class="icon-btn" aria-label="Collapse panel" title="Collapse">‹</button>
+  </div>
+  <div class="panel-body">
+    <div class="ctl-group">
+      <h2>History · 2017–2022</h2>
+      <label class="opt"><input type="radio" name="layer" value="its_annual" checked> Glacier speed by year</label>
+      <div class="year-row">
+        <button id="play" class="icon-btn" title="Play years" aria-label="Play years">▶</button>
+        <input id="year" type="range" min="2017" max="2022" step="1" value="2022" aria-label="Year">
+        <output id="year-out">2022</output>
+      </div>
+      <label class="opt"><input type="radio" name="layer" value="its_dv"> Change 2017 → 2022</label>
+      <label class="opt"><input type="radio" name="layer" value="its_significant"> Significant change only</label>
+      <label class="opt"><input type="radio" name="layer" value="its_trend"> Yearly trend</label>
+    </div>
+    <div class="ctl-group">
+      <h2>Now · NISAR radar 2025–26</h2>
+      <div id="nisar-options"></div>
+    </div>
+    <div class="ctl-group">
+      <h2>How reliable?</h2>
+      <div id="reliability-options"></div>
+    </div>
+    <div class="ctl-group">
+      <h2>Display</h2>
+      <div class="field-row">
+        <label for="flow">Flow arrows</label>
+        <select id="flow"><option value="">None</option></select>
+      </div>
+      <div class="field-row">
+        <label for="opacity">Opacity</label>
+        <input id="opacity" type="range" min="0" max="1" step="0.05" value="0.85">
+      </div>
+      <label class="opt"><input type="checkbox" id="show-hotspots" checked> Show hotspot markers</label>
+    </div>
+    <div class="ctl-group">
+      <h2>3-D terrain</h2>
+      <label class="opt"><input type="checkbox" id="terrain-on"> Show 3-D relief</label>
+      <div class="field-row">
+        <label for="exag">Height exaggeration</label>
+        <span class="exag-wrap"><input id="exag" type="range" min="1" max="2" step="0.1" value="1" disabled aria-describedby="exag-note"><output id="exag-out">1.0×</output></span>
+      </div>
+      <p id="exag-note" class="note">Visual only — makes mountains easier to read. Colours show horizontal ice speed; they do not show the ice getting thicker or thinner.</p>
+    </div>
+    <div id="legend" class="legend"></div>
+  </div>
+</aside>
+
+<!-- right: analysis drawer -->
+<aside class="glass drawer" id="drawer" aria-label="Analysis" hidden>
+  <div class="panel-head">
+    <div class="tabs" role="tablist">
+      <button role="tab" class="tab active" data-tab="point" aria-selected="true">Speed at a point</button>
+      <button role="tab" class="tab" data-tab="profile" aria-selected="false">Along the glacier</button>
+      <button role="tab" class="tab" data-tab="hot" aria-selected="false">Hotspots</button>
+    </div>
+    <button id="drawer-close" class="icon-btn" aria-label="Close analysis" title="Close">×</button>
+  </div>
+
+  <section class="tab-body" data-body="point">
+    <div class="tab-title">
+      <div><h3 id="point-title">Whole glacier</h3><p id="point-sub" class="sub">Median of all glacier ice. Click the map to inspect any spot.</p></div>
+      <button id="point-clear" class="btn small" hidden>Clear pin ×</button>
+    </div>
+    <div class="chart-legend" id="point-legend"></div>
+    <div class="chart" id="point-chart"></div>
+  </section>
+
+  <section class="tab-body" data-body="profile" hidden>
+    <div class="tab-title">
+      <div><h3>Speed along the glacier</h3><p id="prof-sub" class="sub">Pick the Siachen main trunk or draw your own line.</p></div>
+    </div>
+    <div class="btn-row">
+      <button id="prof-trunk" class="btn small">Siachen main trunk</button>
+      <button id="prof-draw" class="btn small">Draw a line</button>
+      <button id="prof-clear" class="btn small" hidden>Clear line ×</button>
+    </div>
+    <div class="chart-legend" id="prof-legend"></div>
+    <div class="chart" id="profile-chart"></div>
+  </section>
+
+  <section class="tab-body" data-body="hot" hidden>
+    <div class="tab-title">
+      <div><h3>Change hotspots 2017–2022</h3><p class="sub">Areas that changed more than twice the measurement error. Click a row to fly there.</p></div>
+    </div>
+    <div class="table-wrap">
+      <table class="hot-table">
+        <thead><tr><th>#</th><th>Change</th><th class="num">Area</th><th class="num">Speed 2017 → 2022</th></tr></thead>
+        <tbody id="hotspots"></tbody>
+      </table>
+    </div>
+  </section>
+</aside>
+
+<!-- bottom: headline numbers -->
+<section class="kpis" id="kpis" aria-label="Headline numbers"></section>
+
+<div id="hover" class="map-tip" hidden></div>
+<div id="chart-tip" class="chart-tip" hidden></div>
+<div id="intro-skip" class="glass intro-skip">Flying to Siachen Glacier… <button id="skip" class="btn small">Skip</button></div>
+<div id="loading" class="glass loading">Loading glacier data…</div>
+<div id="toast" class="glass toast" role="status" hidden></div>
+
+<dialog id="about" aria-labelledby="about-title">
+  <form method="dialog" class="about-body">
+    <div class="about-top"><h2 id="about-title">About the data &amp; methodology</h2><button class="icon-btn" aria-label="Close">×</button></div>
+    <nav class="about-nav">
+      <a href="#m-what">Overview</a><a href="#m-data">Data &amp; dates</a><a href="#m-grid">Resolution &amp; CRS</a><a href="#m-vel">Velocity</a>
+      <a href="#m-qc">Quality &amp; uncertainty</a><a href="#m-change">Seasons &amp; hotspots</a><a href="#m-val">Validation</a><a href="#m-lim">Limitations</a>
+    </nav>
+
+    <h3 id="m-what">What you are seeing</h3>
+    <p>Glaciers flow downhill like very slow rivers of ice. Satellites observe the same place days to weeks apart; by matching surface features between the two observations we measure how far — and in which direction — the ice moved. Map colours are that horizontal speed, in metres per year (m/yr).</p>
+    <h3>How to use</h3>
+    <ol>
+      <li>Pick a map layer on the left — the box under it explains the colours.</li>
+      <li>Click the glacier to see its speed over time (<kbd>Esc</kbd> or “Clear pin” removes the pin).</li>
+      <li><b>Analysis → Along the glacier</b>: hover the chart; a yellow dot follows on the map.</li>
+      <li>Tick <b>Show 3-D relief</b> to see the terrain; <b>Reset view</b> (top-right) returns to the start.</li>
+    </ol>
+
+    <h3 id="m-data">Data sources, acquisition dates and intervals</h3>
+    <p><b>NASA–ISRO NISAR</b> L2 GOFF — geocoded pixel-offset product, L-band SAR (DOI 10.5067/NIL2GOFF-B1; Beta and Provisional releases), distributed by ASF DAAC. Seven image pairs, each spanning <b>12 days</b>:</p>
+    <div class="table-wrap"><table class="m-table"><thead><tr><th>Track</th><th>Direction</th><th>First → second observation</th><th>Season</th><th class="num">Rock noise</th></tr></thead><tbody id="m-pairs"></tbody></table></div>
+    <p><b>NASA ITS_LIVE v2.1</b> (MEaSUREs, JPL) annual velocity mosaics for 2017–2022, region RGI 14A (High Mountain Asia), built from Landsat 8/9, Sentinel-1 and Sentinel-2 image pairs. Variables used: speed <code>v</code>, components <code>vx, vy</code>, their errors, and <code>count</code> (number of image pairs).</p>
+    <p><b>3-D relief:</b> AWS Terrain Tiles (Mapzen “Terrarium” encoding; global DEM compilation incl. SRTM). Used for display only, never in calculations. Basemap imagery © Esri, Maxar, Earthstar Geographics.</p>
+
+    <h3 id="m-grid">Spatial resolution and coordinate reference systems</h3>
+    <div class="table-wrap"><table class="m-table"><thead><tr><th>Dataset</th><th>Native resolution</th><th>CRS</th></tr></thead><tbody>
+      <tr><td>NISAR GOFF</td><td>80 m</td><td>WGS 84 / UTM 43N (EPSG:32643)</td></tr>
+      <tr><td>ITS_LIVE v2.1</td><td>120 m</td><td>Asia North Albers Equal Area (ESRI:102027)</td></tr>
+      <tr><td>Common analysis grid</td><td>80 m</td><td>EPSG:32643 — all NISAR pairs resampled here</td></tr>
+      <tr><td>Web display</td><td>100 m</td><td>Web Mercator (EPSG:3857), bilinear resampling</td></tr>
+    </tbody></table></div>
+    <p>Study area: 76.75–77.30° E, 35.15–35.70° N (Siachen Glacier and tributaries). Areas and lengths are computed on equal-area grids or as geodesic distances.</p>
+
+    <h3 id="m-vel">How displacement was converted into velocity</h3>
+    <ol>
+      <li>GOFF gives two offsets per pixel: <b>along-track</b> (direction of satellite flight) and <b>slant-range</b> (change in distance to the satellite), in metres.</li>
+      <li>A constant bias is removed from each pair using <b>stable rock</b> (ITS_LIVE speed ≤ 3 m/yr), which should not move.</li>
+      <li>Offsets are projected to ground motion with the product’s own radar geometry (line-of-sight and along-track unit vectors from its <code>radarGrid</code>).</li>
+      <li>Where only one viewing direction exists, east/north motion is solved assuming flow parallel to the surface (vertical = 0). Where <b>ascending and descending</b> pairs overlap, east, north and up are solved by least squares with no such assumption.</li>
+      <li>Displacement ÷ time interval × 365.25 = velocity in m/yr. Pairs from the same season and direction are combined by per-pixel median.</li>
+    </ol>
+    <p>The inversion is checked by an automated test that recovers a known synthetic velocity field exactly.</p>
+
+    <h3 id="m-qc">Quality filtering and uncertainty</h3>
+    <ul>
+      <li><b>NISAR:</b> removed pixels flagged invalid or water in the product mask; signal-to-noise &lt; 5; offsets larger than 30 m; values differing from their 5×5 neighbourhood median by &gt; 2 m; speeds &gt; 800 m/yr (impossible for Siachen). Uncertainty per pair = spread of motion on stable rock (table above).</li>
+      <li><b>ITS_LIVE:</b> kept a pixel-year only if ≥ 5 image pairs contributed, the error was ≤ 20 m/yr or ≤ 25 % of the speed, and speed &lt; 1,500 m/yr. Errors are shown as the shaded band / ± values in charts and as the “measurement precision” layer.</li>
+      <li><b>Glacier ice</b> = median 2017–2022 speed ≥ 15 m/yr; <b>stable rock</b> = ≤ 3 m/yr.</li>
+    </ul>
+
+    <h3 id="m-change">How seasonal change and hotspots were calculated</h3>
+    <ul>
+      <li><b>Seasons:</b> winter = Nov–Apr (4 pairs), summer = May–Oct (3 pairs). Summer − winter is computed only where <b>both</b> seasons were measured. Headline: fast ice (≥ 40 m/yr) <span id="m-seasonal"></span>.</li>
+      <li><b>Trend:</b> per-pixel least-squares slope of ITS_LIVE speed against year (≥ 4 valid years), with its standard error.</li>
+      <li><b>Significant change:</b> the trend is ≥ 2 standard errors from zero <b>and</b> the 2017→2022 change exceeds 2 × its combined measurement error, in the same direction.</li>
+      <li><b>Hotspots:</b> connected (8-neighbour) areas of significant change ≥ 0.25 km², ranked by area.</li>
+      <li><b>Centreline:</b> least-cost path through the fastest ice from the upper basin to the snout (35.205° N, 77.192° E).</li>
+    </ul>
+
+    <h3 id="m-val">Validation</h3>
+    <p>NISAR results are compared with ITS_LIVE over glacier ice (different years, so patterns — not exact values — should agree):</p>
+    <div class="table-wrap"><table class="m-table"><thead><tr><th>Season</th><th class="num">Flow-direction difference (median)</th><th class="num">Within 30°</th><th class="num">Speed pattern r</th></tr></thead><tbody id="m-val-rows"></tbody></table></div>
+
+    <h3 id="m-lim">Known coverage gaps and limitations</h3>
+    <ul>
+      <li>NISAR (2025–26) and ITS_LIVE (2017–22) do not overlap in time; we compare spatial patterns, not the same period.</li>
+      <li>Summer NISAR covers less ice (upper glacier gaps where wet snow prevents radar matching); single-direction areas assume surface-parallel flow.</li>
+      <li>Vertical ice motion was computed where both directions exist but is too noisy (≈ ±18 m/yr on rock) to report. <b>Thinning or thickening is not measured</b> by this tool; the 3-D relief is a present-day terrain model, exaggerated only for display.</li>
+      <li>Hotspots near the edge of the study area may be clipped; only hotspots inside it are listed.</li>
+      <li>NISAR products are early (Beta / Provisional) releases and may be reprocessed by NASA/JPL.</li>
+    </ul>
+    <div class="about-actions"><button class="btn">Close</button></div>
+  </form>
+</dialog>
+
+<script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+path,shape,dtype
+science/LSAR/GOFF/grids/frequencyA/centerFrequency,(),float64
+science/LSAR/GOFF/grids/frequencyA/listOfLayers,"(3,)",|S6
+science/LSAR/GOFF/grids/frequencyA/listOfPolarizations,"(1,)",|S2
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/alongTrackOffset,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/alongTrackOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/correlationSurfacePeak,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/crossOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/projection,(),uint32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/slantRangeOffset,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/slantRangeOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/snr,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/xCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/xCoordinates,"(4365,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/yCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer1/yCoordinates,"(4302,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/alongTrackOffset,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/alongTrackOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/correlationSurfacePeak,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/crossOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/projection,(),uint32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/slantRangeOffset,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/slantRangeOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/snr,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/xCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/xCoordinates,"(4365,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/yCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer2/yCoordinates,"(4302,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/alongTrackOffset,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/alongTrackOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/correlationSurfacePeak,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/crossOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/projection,(),uint32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/slantRangeOffset,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/slantRangeOffsetVariance,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/snr,"(4302, 4365)",float32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/xCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/xCoordinates,"(4365,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/yCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/HH/layer3/yCoordinates,"(4302,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/mask,"(4302, 4365)",uint8
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/projection,(),uint32
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/xCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/xCoordinates,"(4365,)",float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/yCoordinateSpacing,(),float64
+science/LSAR/GOFF/grids/frequencyA/pixelOffsets/yCoordinates,"(4302,)",float64
+science/LSAR/GOFF/metadata/attitude/reference/attitudeType,(),|S10
+science/LSAR/GOFF/metadata/attitude/reference/eulerAngles,"(107, 3)",float64
+science/LSAR/GOFF/metadata/attitude/reference/quaternions,"(107, 4)",float64
+science/LSAR/GOFF/metadata/attitude/reference/time,"(107,)",float64
+science/LSAR/GOFF/metadata/attitude/secondary/attitudeType,(),|S10
+science/LSAR/GOFF/metadata/attitude/secondary/eulerAngles,"(107, 3)",float64
+science/LSAR/GOFF/metadata/attitude/secondary/quaternions,"(107, 4)",float64
+science/LSAR/GOFF/metadata/attitude/secondary/time,"(107,)",float64
+science/LSAR/GOFF/metadata/orbit/reference/interpMethod,(),|S7
+science/LSAR/GOFF/metadata/orbit/reference/orbitType,(),|S3
+science/LSAR/GOFF/metadata/orbit/reference/position,"(34, 3)",float64
+science/LSAR/GOFF/metadata/orbit/reference/time,"(34,)",float64
+science/LSAR/GOFF/metadata/orbit/reference/velocity,"(34, 3)",float64
+science/LSAR/GOFF/metadata/orbit/secondary/interpMethod,(),|S7
+science/LSAR/GOFF/metadata/orbit/secondary/orbitType,(),|S3
+science/LSAR/GOFF/metadata/orbit/secondary/position,"(34, 3)",float64
+science/LSAR/GOFF/metadata/orbit/secondary/time,"(34,)",float64
+science/LSAR/GOFF/metadata/orbit/secondary/velocity,"(34, 3)",float64
+science/LSAR/GOFF/metadata/orbit/temporalBaseline,(),uint16
+science/LSAR/GOFF/metadata/processingInformation/algorithms/coregistration/coregistrationMethod,(),|S59
+science/LSAR/GOFF/metadata/processingInformation/algorithms/coregistration/geometryCoregistration,(),|S54
+science/LSAR/GOFF/metadata/processingInformation/algorithms/coregistration/resampling,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/algorithms/crossCorrelation/layer1/crossCorrelationAlgorithm,(),|S9
+science/LSAR/GOFF/metadata/processingInformation/algorithms/crossCorrelation/layer2/crossCorrelationAlgorithm,(),|S9
+science/LSAR/GOFF/metadata/processingInformation/algorithms/crossCorrelation/layer3/crossCorrelationAlgorithm,(),|S9
+science/LSAR/GOFF/metadata/processingInformation/algorithms/geocoding/complexGeocodingInterpolation,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/algorithms/geocoding/demInterpolation,(),|S9
+science/LSAR/GOFF/metadata/processingInformation/algorithms/geocoding/floatingGeocodingInterpolation,(),|S8
+science/LSAR/GOFF/metadata/processingInformation/algorithms/geocoding/integerGeocodingInterpolation,(),|S7
+science/LSAR/GOFF/metadata/processingInformation/algorithms/softwareVersion,(),|S6
+science/LSAR/GOFF/metadata/processingInformation/inputs/configFiles,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/inputs/demSource,(),|S1120
+science/LSAR/GOFF/metadata/processingInformation/inputs/l1ReferenceSlcGranules,"(1,)",|S94
+science/LSAR/GOFF/metadata/processingInformation/inputs/l1SecondarySlcGranules,"(1,)",|S21
+science/LSAR/GOFF/metadata/processingInformation/inputs/orbitFiles,"(2,)",|S237
+science/LSAR/GOFF/metadata/processingInformation/inputs/waterMaskSource,(),|S15
+science/LSAR/GOFF/metadata/processingInformation/parameters/common/frequencyA/dopplerBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/common/frequencyA/dopplerCentroid,"(85, 86)",float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/geocoding/azimuthIonosphericCorrectionApplied,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/parameters/geocoding/hydrostaticTroposphericCorrectionApplied,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/parameters/geocoding/rangeIonosphericCorrectionApplied,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/parameters/geocoding/wetTroposphericCorrectionApplied,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/alongTrackSkipWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/alongTrackStartPixel,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/azimuthBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/correlationSurfaceOversampling,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer1/alongTrackSearchWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer1/alongTrackWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer1/slantRangeSearchWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer1/slantRangeWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer2/alongTrackSearchWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer2/alongTrackWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer2/slantRangeSearchWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer2/slantRangeWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer3/alongTrackSearchWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer3/alongTrackWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer3/slantRangeSearchWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/layer3/slantRangeWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/margin,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/rangeBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/slantRangeSkipWindowSize,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/pixelOffsets/frequencyA/slantRangeStartPixel,(),uint32
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/azimuthBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/dopplerCentroid,"(85, 86)",float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/numberOfAzimuthLines,(),uint64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/numberOfRangeSamples,(),uint64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/rangeBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/slantRangeSpacing,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/slantRangeStart,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/zeroDopplerEndTime,(),|S29
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/zeroDopplerStartTime,(),|S29
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/frequencyA/zeroDopplerTimeSpacing,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/isMixedMode,(),|S5
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/referenceTerrainHeight,"(85,)",float32
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/rfiMitigation,(),|S8
+science/LSAR/GOFF/metadata/processingInformation/parameters/reference/rfiMitigationApplied,(),|S4
+science/LSAR/GOFF/metadata/processingInformation/parameters/runConfigurationContents,(),|S20784
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/azimuthBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/dopplerCentroid,"(84, 88)",float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/numberOfAzimuthLines,(),uint64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/numberOfRangeSamples,(),uint64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/rangeBandwidth,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/slantRangeSpacing,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/slantRangeStart,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/zeroDopplerEndTime,(),|S29
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/zeroDopplerStartTime,(),|S29
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/frequencyA/zeroDopplerTimeSpacing,(),float64
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/isMixedMode,(),|S5
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/referenceTerrainHeight,"(84,)",float32
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/rfiMitigation,(),|S8
+science/LSAR/GOFF/metadata/processingInformation/parameters/secondary/rfiMitigationApplied,(),|S4
+science/LSAR/GOFF/metadata/radarGrid/alongTrackUnitVectorX,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/alongTrackUnitVectorY,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/elevationAngle,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/groundTrackVelocity,"(20, 700, 710)",float64
+science/LSAR/GOFF/metadata/radarGrid/heightAboveEllipsoid,"(20,)",float64
+science/LSAR/GOFF/metadata/radarGrid/incidenceAngle,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/losUnitVectorX,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/losUnitVectorY,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/parallelBaseline,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/perpendicularBaseline,"(20, 700, 710)",float32
+science/LSAR/GOFF/metadata/radarGrid/projection,(),uint32
+science/LSAR/GOFF/metadata/radarGrid/referenceSlantRange,"(20, 700, 710)",float64
+science/LSAR/GOFF/metadata/radarGrid/referenceZeroDopplerAzimuthTime,"(20, 700, 710)",float64
+science/LSAR/GOFF/metadata/radarGrid/secondarySlantRange,"(20, 700, 710)",float64
+science/LSAR/GOFF/metadata/radarGrid/secondaryZeroDopplerAzimuthTime,"(20, 700, 710)",float64
+science/LSAR/GOFF/metadata/radarGrid/xCoordinates,"(710,)",float64
+science/LSAR/GOFF/metadata/radarGrid/yCoordinates,"(700,)",float64
+science/LSAR/identification/boundingPolygon,(),|S2084
+science/LSAR/identification/compositeReleaseId,(),|S6
+science/LSAR/identification/diagnosticModeFlag,(),uint32
+science/LSAR/identification/frameNumber,(),uint16
+science/LSAR/identification/granuleId,(),|S123
+science/LSAR/identification/instrumentName,(),|S5
+science/LSAR/identification/isDithered,(),|S5
+science/LSAR/identification/isFullFrame,(),|S4
+science/LSAR/identification/isGeocoded,(),|S4
+science/LSAR/identification/isMixedMode,(),|S5
+science/LSAR/identification/isUrgentObservation,(),|S5
+science/LSAR/identification/listOfFrequencies,"(1,)",|S1
+science/LSAR/identification/lookDirection,(),|S4
+science/LSAR/identification/missionId,(),|S5
+science/LSAR/identification/orbitPassDirection,(),|S10
+science/LSAR/identification/platformName,(),|S5
+science/LSAR/identification/processingCenter,(),|S3
+science/LSAR/identification/processingDateTime,(),|S19
+science/LSAR/identification/processingType,(),|S7
+science/LSAR/identification/productDoi,(),|S19
+science/LSAR/identification/productLevel,(),|S2
+science/LSAR/identification/productSpecificationVersion,(),|S5
+science/LSAR/identification/productType,(),|S4
+science/LSAR/identification/productVersion,(),|S5
+science/LSAR/identification/radarBand,(),|S1
+science/LSAR/identification/referenceAbsoluteOrbitNumber,(),uint32
+science/LSAR/identification/referenceIsJointObservation,(),|S4
+science/LSAR/identification/referenceListOfObservationModes,"(1,)",|S15
+science/LSAR/identification/referencePlannedDatatakeId,"(1,)",|S18
+science/LSAR/identification/referencePlannedObservationId,"(1,)",|S17
+science/LSAR/identification/referenceZeroDopplerEndTime,(),|S29
+science/LSAR/identification/referenceZeroDopplerStartTime,(),|S29
+science/LSAR/identification/secondaryAbsoluteOrbitNumber,(),uint32
+science/LSAR/identification/secondaryIsJointObservation,(),|S4
+science/LSAR/identification/secondaryListOfObservationModes,"(1,)",|S15
+science/LSAR/identification/secondaryPlannedDatatakeId,"(1,)",|S18
+science/LSAR/identification/secondaryPlannedObservationId,"(1,)",|S17
+science/LSAR/identification/secondaryZeroDopplerEndTime,(),|S29
+science/LSAR/identification/secondaryZeroDopplerStartTime,(),|S29
+science/LSAR/identification/staticLayersDataAccess,(),|S193
+science/LSAR/identification/trackNumber,(),uint32
