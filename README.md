@@ -6,7 +6,7 @@ NASA–ISRO **NISAR** L-band radar (2025–26) and NASA **ITS_LIVE** (2017–202
 
 *NASA Space Apps Challenge 2026 — “Dancing with the SARs”.*
 
-🌐 **Live app:** _link added after publishing (GitHub Pages)_
+🌐 **Live app:** **https://basit6117.github.io/pakistan-glacier-intelligence-explorer/**
 📄 **Team handbook:** [`docs/Pakistan_Glacier_Intelligence_Explorer_Report.docx`](docs/Pakistan_Glacier_Intelligence_Explorer_Report.docx)
 
 ![3-D view of Siachen with significant change](docs/images/app_05_3d_relief.png)
