@@ -7,7 +7,8 @@ NASA–ISRO **NISAR** L-band radar (2025–26) and NASA **ITS_LIVE** (2017–202
 *NASA Space Apps Challenge 2026 — “Dancing with the SARs”.*
 
 🌐 **Live app:** **https://basit6117.github.io/pakistan-glacier-intelligence-explorer/**
-📄 **Team handbook:** [`docs/Pakistan_Glacier_Intelligence_Explorer_Report.docx`](docs/Pakistan_Glacier_Intelligence_Explorer_Report.docx)
+📄 **Team handbook:** [`docs/Pakistan_Glacier_Intelligence_Explorer_Report.docx`](docs/Pakistan_Glacier_Intelligence_Explorer_Report.docx)  
+🤖 **AI usage declared:** built with the help of generative AI (Claude, ChatGPT) — see [AI usage](#ai-usage) and [`AI_USAGE.md`](AI_USAGE.md)
 
 ![3-D view of Siachen with significant change](docs/images/app_05_3d_relief.png)
 
@@ -183,6 +184,19 @@ Full details, figures and limitations: see the team handbook in `docs/` or the i
 - Summer NISAR has gaps on the upper glacier (wet snow); single-direction areas assume surface-parallel flow.
 - Vertical motion / thinning is not reported. NISAR products are early Beta/Provisional releases.
 
+## AI usage
+In line with the NASA Space Apps rules, we declare that **generative AI was used extensively** in this project:
+
+| Tool | What it did |
+|---|---|
+| **Claude** (Anthropic; Claude Opus 5.5 via **Claude Code**) | Wrote the code (processing library, notebooks, scripts, test, web app), ran the data processing and produced all derived data, tables and figures, proposed methods that the team approved, tested the app, drafted the README / in-app text / team handbook, and set up the GitHub repository and Pages site |
+| **ChatGPT** (OpenAI) | Early planning only: explaining the challenges, comparing ideas, suggesting data sources and a first roadmap |
+
+**The team** chose the challenge, region and target glacier, downloaded the NASA data, directed every step, made the
+design and scientific decisions, and reviewed the results. **No AI-generated images or audio** are included (all figures
+are plots of the satellite data; screenshots show the real app), and **no NASA logos or branding** are used.
+Full details: [`AI_USAGE.md`](AI_USAGE.md).
+
 ## Team
 This is a **team project** for the NASA Space Apps Challenge 2026.
 
@@ -197,3 +211,4 @@ This is a **team project** for the NASA Space Apps Challenge 2026.
 - ITS_LIVE v2.1: NASA MEaSUREs Inter-mission Time Series of Land Ice Velocity and Elevation, JPL
 - Terrain: AWS Terrain Tiles (Mapzen) · Basemap: © Esri, Maxar, Earthstar Geographics
 - Map library: [MapLibre GL JS](https://maplibre.org/)
+- AI assistance: Claude (Anthropic) supported the project’s code development, data-processing workflows, documentation, and web app. The team directed and reviewed the work.
