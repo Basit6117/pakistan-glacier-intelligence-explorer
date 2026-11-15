@@ -25,6 +25,11 @@
   "res": 100.0,
   "nodata": -32768
  },
+ "provenance": {
+  "ai_generated_code": true,
+  "ai_generated_data_products": true,
+  "disclosure": "AI-written code and AI-assisted processing produced these derived web layers; see AI_USAGE.md."
+ },
  "layers": [
   {
    "id": "its_2017",

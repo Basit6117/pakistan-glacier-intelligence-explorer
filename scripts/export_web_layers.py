@@ -68,6 +68,11 @@ def legend(cmap, vmin, vmax, n=7):
 
 
 manifest = {"corners": CORNERS, "grid": {"width": W, "height": H, "x0": x0, "y1": y1, "res": RES, "nodata": NODATA},
+            "provenance": {
+                "ai_generated_code": True,
+                "ai_generated_data_products": True,
+                "disclosure": "AI-written code and AI-assisted processing produced these derived web layers; see AI_USAGE.md."
+            },
             "layers": [], "bands": [], "flow": [], "stats": {}}
 bands = []
 
