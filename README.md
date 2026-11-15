@@ -134,10 +134,11 @@ Full details, figures and limitations: see the team handbook in `docs/` or the i
 ## Team
 This is a **team project** for the NASA Space Apps Challenge 2026.
 
-| Member | Role |
-|---|---|
-| Abdul Basit | |
-| _(add teammates here)_ | |
+| Member |
+|---|
+| Muhammad Awais | 
+| Abdullah Zunorain | 
+| Abdul Basit |
 
 ## Credits
 - NISAR L2 GOFF: NASA/JPL–ISRO, distributed by the Alaska Satellite Facility DAAC — DOI 10.5067/NIL2GOFF-B1
