@@ -13,6 +13,58 @@ NASA–ISRO **NISAR** L-band radar (2025–26) and NASA **ITS_LIVE** (2017–202
 
 ---
 
+## Why we built this
+
+Northern Pakistan holds some of the largest glaciers outside the polar regions. Their meltwater feeds the Indus river
+system that millions of people depend on for drinking water, farming and hydropower — and the Karakoram is known for
+glaciers that can suddenly **surge** forward, damming valleys and threatening the communities below.
+
+Yet these glaciers are some of the hardest places on Earth to watch. They sit at 4,000–7,000 m, are often hidden under
+cloud, and are too remote and dangerous for regular field measurements. As a result, a simple question is surprisingly
+hard to answer: **how fast is the ice moving, and is that changing?**
+
+We chose **Siachen Glacier** — one of the longest glaciers outside the polar regions — as our test case, and set out to
+answer that question with satellites instead of fieldwork.
+
+## The challenge
+
+**NASA Space Apps Challenge 2026 — “Dancing with the SARs”** asks teams to use observations from **NISAR**, the new
+joint NASA–ISRO radar satellite, to detect and track changes on Earth's surface. Radar (SAR) is ideal for this: it
+sees through cloud and darkness, and NISAR's long L-band wavelength keeps a clear signal over snow and ice.
+
+For glaciers, this breaks down into a set of concrete problems:
+
+1. **Glaciers are remote and cloud-covered**, so ground monitoring is hard.
+2. **Nobody knows how a glacier is changing over time** without a consistent long-term record.
+3. **Melt-season behaviour is poorly observed** — summer is exactly when clouds block optical satellites.
+4. **It is unclear where to look for hazards** across hundreds of square kilometres of ice.
+5. **The data is too technical for decision-makers** — raw radar products need specialist software and expertise.
+6. **Can the numbers be trusted?** Results must be calibrated, validated and honest about uncertainty.
+
+## Our solution
+
+**Pakistan Glacier Intelligence Explorer** turns raw NISAR radar products into a validated picture of how Siachen's ice
+moves and changes, and puts it in a web map that anyone can use — no GIS skills needed.
+
+| Part of the problem | What our project does | Where to look |
+|---|---|---|
+| Glaciers are remote and cloud-covered, so ground monitoring is hard | Measures ice motion from **NISAR L-band radar** — 7 image pairs, Nov 2025 to Aug 2026, from two viewing directions | [`src/pgie/nisar.py`](src/pgie/nisar.py), [notebook 03](notebooks/03_nisar_multitrack_seasonal.ipynb) |
+| Nobody knows how a glacier is changing over time | Builds a **2017–2022 history** from NASA ITS_LIVE, with per-pixel trend and significance tests | [notebook 02](notebooks/02_siachen_preprocessing_velocity.ipynb), [notebook 04](notebooks/04_change_hotspots_uncertainty.ipynb), [`src/pgie/analysis.py`](src/pgie/analysis.py) |
+| Melt-season behaviour is poorly observed | Shows fast ice moving **44 % faster in summer than in winter** (63 → 94 m/yr, same locations) | Seasonal layers in the [live app](https://basit6117.github.io/pakistan-glacier-intelligence-explorer/) |
+| It is unclear where to look for hazards | Detects **change hotspots**, including a tributary slowdown that resembles the end of a surge | Hotspot table in the app's **Analysis** drawer |
+| The data is too technical for decision-makers | Provides a **live, no-GIS web map** with plain-language explanations, charts and a 3-D view | [Live app](https://basit6117.github.io/pakistan-glacier-intelligence-explorer/) |
+| Can the numbers be trusted? | Calibrates every pair on **stable rock**, **validates against ITS_LIVE** (flow direction within 7–10°), shows **± errors**, and **tests the velocity maths** | [`tests/test_inversion.py`](tests/test_inversion.py), the app's **About the data & methodology** panel |
+
+### How it works, in four steps
+1. **Collect** — 7 NISAR GOFF radar pairs (NASA–ISRO) and 42 ITS_LIVE annual velocity maps (NASA, 2017–2022).
+2. **Clean & calibrate** — remove unreliable radar matches, correct each pair against stable rock, convert radar offsets
+   into real ground velocity using the satellite's own viewing geometry.
+3. **Analyse** — combine seasons and viewing directions, compute long-term trends, keep only changes larger than their
+   measurement error, and find the hotspots.
+4. **Share** — publish everything as an interactive web map, with the full methodology one click away.
+
+---
+
 ## Key findings
 
 | Finding | Value | Source |
